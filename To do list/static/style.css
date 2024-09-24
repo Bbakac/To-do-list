@@ -1,0 +1,99 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlıklar */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Görev ekleme formu */
+#todo-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input, #deadline-input, #priority-select {
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 15px;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Dikey hizalama */
+}
+
+li button {
+    background-color: #e74c3c;
+    margin-top: 10px;
+}
+
+li button:hover {
+    background-color: #c0392b;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+#archived-list {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+#todo-list, #archived-list {
+    max-width: 600px;
+    margin: 0 auto;
+}

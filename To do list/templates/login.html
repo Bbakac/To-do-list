@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Giriş Yap</h1>
+    <input type="email" id="login-email" placeholder="E-posta" required>
+    <input type="password" id="login-password" placeholder="Şifre" required>
+    <button id="login-button">Giriş Yap</button>
+    <div id="login-message"></div>
+    <div><a href="/">Ana Sayfaya Dön</a></div>
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', function() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, password: password }),
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Giriş başarısız!");
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('login-message').innerText = "Giriş başarılı!";
+            })
+            .catch(err => {
+                document.getElementById('login-message').innerText = err.message;
+            });
+        });
+    </script>
+</body>
+</html>
